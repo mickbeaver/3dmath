@@ -45,6 +45,30 @@
        (* z z)
        (* w w))))
 
+(defun vec2-sub (p q)
+  (make-vec2 (- (vec-x p)
+                (vec-x q))
+             (- (vec-y p)
+                (vec-y q))))
+
+(defun vec3-sub (p q)
+  (make-vec3 (- (vec-x p)
+                (vec-x q))
+             (- (vec-y p)
+                (vec-y q))
+             (- (vec-z p)
+                (vec-z q))))
+
+(defun vec4-sub (p q)
+  (make-vec4 (- (vec-x p)
+                (vec-x q))
+             (- (vec-y p)
+                (vec-y q))
+             (- (vec-z p)
+                (vec-z q))
+             (- (vec-w p)
+                (vec-w q))))
+
 (defun vec2-length (p)
   (sqrt (vec2-sqlength p)))
 
@@ -53,6 +77,15 @@
 
 (defun vec4-length (p)
   (sqrt (vec4-sqlength p)))
+
+(defun vec2-distance (p q)
+  (vec2-length (vec2-sub p q)))
+
+(defun vec3-distance (p q)
+  (vec3-length (vec3-sub p q)))
+
+(defun vec4-distance (p q)
+  (vec4-length (vec4-sub p q)))
 
 (defun vec2-scale (scale p)
   (make-vec2 (* scale (vec-x p))
@@ -91,6 +124,16 @@
   (let ((p-dot-q (vec2-dot p q))
         (q-sqlength (vec2-sqlength q)))
     (vec2-scale (/ p-dot-q q-sqlength) q)))
+
+(defun vec3-projection (p q)
+  (let ((p-dot-q (vec3-dot p q))
+        (q-sqlength (vec3-sqlength q)))
+    (vec3-scale (/ p-dot-q q-sqlength) q)))
+
+(defun vec4-projection (p q)
+  (let ((p-dot-q (vec4-dot p q))
+        (q-sqlength (vec4-sqlength q)))
+    (vec4-scale (/ p-dot-q q-sqlength) q)))
 
 (defun vec2-equal (p q)
   (and (= (vec-x p)

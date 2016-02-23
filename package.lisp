@@ -8,6 +8,28 @@
    #:vec-y
    #:vec-z
    #:vec-w
+   #:vec2-sqlength
+   #:vec3-sqlength
+   #:vec4-sqlength
+   #:vec2-sub
+   #:vec3-sub
+   #:vec4-sub
+   #:vec2-length
+   #:vec3-length
+   #:vec4-length
+   #:vec2-distance
+   #:vec3-distance
+   #:vec4-distance
+   #:vec2-scale
+   #:vec3-scale
+   #:vec4-scale
+   #:vec2-normalize
+   #:vec3-normalize
+   #:vec4-normalize
+   #:vec2-projection
+   #:vec3-projection
+   #:vec4-projection
+   #:vec4-scale
    #:vec2-equal
    #:vec3-equal
    #:vec4-equal
