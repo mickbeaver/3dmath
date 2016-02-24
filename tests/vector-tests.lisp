@@ -52,10 +52,69 @@
     (assert-true (vec2-approx-equal (vec2-normalize (make-vec2 0.0 743.632))
                                     (make-vec2 0.0 1.0))))
 
-;; (define-test test-cross-product
-;;     (assert-true (vec3-approx-equal (vec3-cross (make-vec3 1.0 0.0 0.0)
-;;                                                 (make-vec3 0.0 1.0 0.0))
-;;                                     (make-vec3 0.0 0.0 1.0)))
-;;     (assert-true (vec3-approx-equal (vec3-cross (make-vec3 2.0  2.0 1.0)
-;;                                                 (make-vec3 1.0 -2.0 0.0))
-;;                                     (make-vec3 2.0 1.0 -6.0))))
+(define-test test-vec3-add-01
+    (assert-true (vec3-approx-equal (vec3-add (make-vec3 7.0 -2.0 -3.0)
+                                              (make-vec3 6.0 6.0 -4.0))
+                                    (make-vec3 13.0 4.0 -7.0))))
+
+(define-test test-vec3-add-02
+    (assert-true (vec3-approx-equal (vec3-add (make-vec3 2.0 9.0 -1.0)
+                                              (make-vec3 -2.0 -9.0 1.0))
+                                    (make-vec3 0.0 0.0 0.0))))
+
+(define-test test-vec3-cross-product-01
+    (assert-true (vec3-approx-equal (vec3-cross (make-vec3 1.0 0.0 0.0)
+                                                (make-vec3 0.0 1.0 0.0))
+                                    (make-vec3 0.0 0.0 1.0))))
+
+(define-test test-vec3-cross-product-02
+    (assert-true (vec3-approx-equal (vec3-cross (make-vec3 2.0 2.0 1.0)
+                                                (make-vec3 1.0 -2.0 0.0))
+                                    (make-vec3 2.0 1.0 -6.0))))
+
+(define-test test-vec3-distance-01
+  (assert-true (float-approx-equal (vec3-distance (make-vec3 3.0 10.0 7.0)
+                                                  (make-vec3 8.0 -7.0 4.0))
+                                   17.972200)))
+
+(define-test test-vec3-distance-02
+  (assert-true (float-approx-equal (vec3-distance (make-vec3 -2.0 -4.0 9.0)
+                                                  (make-vec3 6.0 -7.0 9.5))
+                                   8.558621)))
+
+(define-test test-vec3-dot-product-01
+  (assert-true (float-approx-equal (vec3-dot (make-vec3 2.0 2.0 1.0)
+                                             (make-vec3 1.0 -2.0 0.0))
+                                   -2.0)))
+
+(define-test test-vec3-length-01
+  (assert-true (float-approx-equal (vec3-length (make-vec3 8.0 -3.0 0.5))
+                                   8.558621384311845)))
+
+(define-test test-vec3-normalize-01
+    (assert-true (vec3-approx-equal (vec3-normalize (make-vec3 8.0 -3.0 0.5))
+                                    (make-vec3 0.934730 -0.350524 0.058421))))
+
+(define-test test-vec3-normalize-02
+    (assert-true (vec3-approx-equal (vec3-normalize (make-vec3 -12.0 3.0 -4.0))
+                                    (make-vec3 -0.923077 0.23077 -0.307692))))
+
+(define-test test-vec3-projection-01
+  (let ((p (make-vec3 4.0 3.0 -1.0))
+        (q (make-vec3 (/ (sqrt 2.0) 2.0)
+                      (/ (sqrt 2.0) 2.0))))
+    (assert-true (vec3-approx-equal (vec3-projection p q)
+                                    (make-vec3 3.5 3.5 0.0)))))
+(define-test test-vec3-scale-01
+    (assert-true (vec3-approx-equal (vec3-scale 3.0 (make-vec3 4.0 -7.0 0.0))
+                                    (make-vec3 12.0 -21.0 0.0))))
+
+(define-test test-vec3-sub-01
+  (assert-true (vec3-approx-equal (vec3-sub (make-vec3 3.0 10.0 7.0)
+                                            (make-vec3 8.0 -7.0 4.0))
+                                  (make-vec3 -5.0 17.0 3.0))))
+
+(define-test test-vec3-sub-02
+  (assert-true (vec3-approx-equal (vec3-sub (make-vec3 4.0 5.0 -11.0)
+                                            (make-vec3 -4.0 -5.0 11.0))
+                                  (make-vec3 8.0 10.0 -22.0))))

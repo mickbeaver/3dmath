@@ -218,5 +218,5 @@
                    (vec-z q)))
              (- (* (vec-x p)
                    (vec-y q))
-                (* (vec-x q)p
+                (* (vec-x q)
                    (vec-y p)))))
