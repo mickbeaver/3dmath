@@ -39,4 +39,38 @@
    #:vec2-dot
    #:vec3-dot
    #:vec4-dot
-   #:vec3-cross))
+   #:vec3-cross
+   #:make-mat2
+   #:make-mat3
+   #:make-mat4
+   #:mat2-11
+   #:mat2-21
+   #:mat2-12
+   #:mat2-22
+   #:mat3-11
+   #:mat3-21
+   #:mat3-31
+   #:mat3-12
+   #:mat3-22
+   #:mat3-32
+   #:mat3-13
+   #:mat3-23
+   #:mat3-33
+   #:mat4-11
+   #:mat4-21
+   #:mat4-31
+   #:mat4-41
+   #:mat4-12
+   #:mat4-22
+   #:mat4-32
+   #:mat4-42
+   #:mat4-13
+   #:mat4-23
+   #:mat4-33
+   #:mat4-43
+   #:mat4-14
+   #:mat4-24
+   #:mat4-34
+   #:mat4-44
+   #:mat2-add
+   #:mat2-multiply))
