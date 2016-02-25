@@ -129,7 +129,7 @@
   (let ((p (vec3-normalize (make-vec3 -12.0 3.0 -4.0))))
     (assert-true (float-approx-equal (vec3-length p) 1.0))
     (assert-true (vec3-approx-equal p
-                                  (make-vec3 -0.923077 0.23077 -0.307692))))
+                                  (make-vec3 -0.923077 0.23077 -0.307692)))))
 
 (define-test test-vec3-projection-01
   (let ((p (make-vec3 4.0 3.0 -1.0))
@@ -176,11 +176,11 @@
   (assert-true (float-approx-equal (vec4-length (make-vec4 8.0 -3.0 0.5 2.5))
                                    8.91627725)))
 
-(define-test test-vec4-normalize body...)-01
+(define-test test-vec4-normalize-01
   (let ((p (vec4-normalize (make-vec4 1.0 1.0 1.0 1.0))))
     (assert-true (float-approx-equal (vec4-length p) 1.0))
     (assert-true (vec4-approx-equal p
-                                    (make-vec4 0.5 0.5 0.5 0.5))))
+                                    (make-vec4 0.5 0.5 0.5 0.5)))))
 
 (define-test test-vec4-scale-01
   (assert-true (vec4-approx-equal (vec4-scale 3.0 (make-vec4 4.0 -7.0 1.0 -2.5))

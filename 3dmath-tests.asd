@@ -7,5 +7,8 @@
   :components
   ((:module "tests"
 	    :components ((:file "package")
-                         (:file "vector-tests")))))
+                         (:file "float")
+                         (:file "vector-tests")
+                         (:file "matrix-tests")))))
+
 
